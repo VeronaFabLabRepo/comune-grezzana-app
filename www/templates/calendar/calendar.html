@@ -1,0 +1,21 @@
+<div class="header">
+    <i class="icon left ion-chevron-left" ng-click="previous()"></i>
+    <div>{{month.format("MMMM YYYY")}}</div>
+    <i class="icon right ion-chevron-right" ng-click="next()"></i>
+</div>
+<div class="week names">
+	<div class="day">Lun</div>
+	<div class="day">Mar</div>
+	<div class="day">Mer</div>
+	<div class="day">Gio</div>
+	<div class="day">Ven</div>
+	<div class="day">Sab</div>
+	<div class="day">Dom</div>
+</div>
+<div class="week" ng-repeat="week in weeks">
+    <div class="day"  ng-class="className(day)" ng-click="select(day)" ng-repeat="day in week.days">
+    	<span class="number">{{day.number}}</span>
+    	<span class="ecomobile"></span>
+    	<span class="triangle"></span>
+    </div>
+</div>

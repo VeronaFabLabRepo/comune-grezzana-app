@@ -1,0 +1,39 @@
+<ion-side-menus enable-menu-with-back-views="false">
+
+<!-- Enable to show the menu button in the internal pages -->
+<!--ion-side-menus enable-menu-with-back-views="true" -->
+
+	<ion-side-menu side="left">
+
+		<ion-content>
+
+			<div class="top">
+				<div class="logo">
+					<img src="img/icon_comune_small.png">
+				</div><span>Comune di Grezzana</span>
+			</div>
+
+			<ion-list>
+				<ion-item href="#/app/calendar" menu-close>Calendario Rifiuti</ion-item>
+				<ion-item href="#/app/dictionary" menu-close>Dizionario Rifiuti</ion-item>
+				<ion-item href="#/app/report" menu-close>Invio Segnalazioni</ion-item>
+				<ion-item href="#/app/credits" menu-close>Credits</ion-item>
+			</ion-list>
+		</ion-content>
+
+	</ion-side-menu>
+
+	<ion-side-menu-content>
+
+    	<ion-nav-bar class="bar-positive" align-title="center">
+			<ion-nav-back-button></ion-nav-back-button>
+			<ion-nav-buttons side="right">
+				<button class="button button-icon button-clear ion-navicon-round" menu-toggle="left"></button>
+			</ion-nav-buttons>
+		</ion-nav-bar>
+
+		<ion-nav-view name="menuContent"></ion-nav-view>
+
+	</ion-side-menu-content>
+
+</ion-side-menus>

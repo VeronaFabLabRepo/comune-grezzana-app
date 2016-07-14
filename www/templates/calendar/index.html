@@ -1,0 +1,40 @@
+<ion-view title="Calendario Rifiuti">
+
+	<ion-content has-header="true" has-footer="true" class="calendar has-footer">
+
+		<div class="today_detail clearfix" ng-class="{'higher': today.items.length > 2}">
+			<div class="left">
+				<div class="main_content">
+					<span class="huge">{{today.day}}</span>
+					<span class="month_year">
+						{{today.month}}<br>
+						<i class="year">{{today.year}}</i>
+					</span>
+				</div>
+			</div>
+			<div class="right">
+				<div class="main_content" ng-if="today.items.length > 0">
+					<p>Oggi si raccoglie:</p>
+					<ul class="items_list">
+						<li ng-repeat="item in today.items" class="clearfix">
+							<img ng-src="img/{{item.id | lowercase}}_icon.png">
+							<span class="name">{{item.name}}</span>
+							<span class="text">{{item.text}}</span>
+						</li>
+					</ul>
+				</div>
+				<div class="main_content" ng-if="today.items.length == 0">
+					<p>Oggi non si raccoglie nulla.</p>
+				</div>
+			</div>
+		</div>
+
+		<calendar selected="day" garbage-days="{{garbageDays}}"></calendar>
+
+	</ion-content>
+
+	<div class="bar bar-footer">
+		<button class="button button-full bottom orange" ng-click="openLegend()">LEGENDA</button>
+	</div>
+
+</ion-view>

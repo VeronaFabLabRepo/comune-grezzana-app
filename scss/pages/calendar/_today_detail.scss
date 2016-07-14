@@ -1,0 +1,64 @@
+	.today_detail {
+		min-height: 150px;
+		height: 150px;
+		margin-bottom: 1px;
+		background-color: #004681;
+		color: #FFF;
+		text-align: center;
+		&.higher {
+			height: 200px;
+		}
+
+		.left {
+			position: relative;
+			display: inline-block;
+			width: 25%;
+			height: 100%;
+			.main_content {
+				@include vertically-centered;
+				font-size: 20px;
+				line-height: 26px;
+				text-align: center;
+				text-transform: capitalize;
+				.year {
+					font-size: 32px;
+					line-height: 32px;
+				}
+				.huge {
+					display: block;
+					font-size: 64px;
+					line-height: 60px;
+				}
+			}
+		}
+		.right {
+			position: relative;
+			display: inline-block;
+			width: 50%;
+			height: 100%;
+			padding-left: 5%;
+			text-align: left;
+			.main_content {
+				@include vertically-centered;
+				font-size: 18px;
+				.items_list {
+					font-size: 14px;
+					li {
+						margin: 10px 0 0;
+						line-height: 28px;
+						img {
+							width: 28px;
+							margin-right: 5px;
+							vertical-align: middle;
+						}
+						.text {
+							display: block;
+							margin-left: 36px;
+							font-size: 12px;
+							line-height: 14px;
+						}
+					}
+				}
+			}
+		}
+	}

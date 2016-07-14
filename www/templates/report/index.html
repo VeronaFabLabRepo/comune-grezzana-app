@@ -1,0 +1,43 @@
+<ion-view title="Invia Segnalazione">
+
+	<form name="send_report" novalidate>
+
+		<ion-content has-header="true" class="report">
+
+			<div class="clearfix">
+
+				<a class="photo_container" ng-click="addPhoto()" ng-class="{ 'active': report.photo != '' }">
+					<span class="plus">
+						<img src="img/trans.gif" ng-src="{{report.photo}}">
+					</span>
+					<span>Aggiungi Foto</span>
+				</a>
+
+				<a href="#" class="btn_container" ng-click="addPosition()" ng-class="{'active': report.lat != '' && report.lng != ''}">
+					<span class="icon-left ion-location"></span>
+					<span class="text" ng-if="report.lat == '' && report.lng == ''">Aggiungi Posizione</span>
+					<span class="text" ng-if="report.lat != '' && report.lng != ''">{{report.lat | number: 4}} / {{report.lng | number: 4}}</span>
+				</a>
+
+			</div>
+
+
+			<div class="list">
+
+				<label class="item item-input">
+					<input type="text" ng-model="report.fullname" placeholder="Nome e Cognome *" required>
+				</label>
+
+				<label class="item item-input">
+					<textarea ng-model="report.description" placeholder="Testo Segnalazione *" required></textarea>
+				</label>
+
+			</div>
+
+			<button class="button button-full orange" type="submit" ng-disabled="send_report.$invalid" ng-click="sendReport()">INVIA SEGNALAZIONE</button>
+
+		</ion-content>
+
+	</form>
+
+</ion-view>

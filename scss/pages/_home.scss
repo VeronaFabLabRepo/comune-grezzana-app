@@ -1,0 +1,51 @@
+.home_list {
+
+	a {
+		display: block;
+		height: 180px;
+		//margin-bottom: 2px;
+		background-color: #006B8E;
+		color: #FFF;
+		text-align: center;
+		&.calendar {
+			background-color: #004681;
+		}
+		&.dictionary {
+			background-color: #005783;
+		}
+		&.report {
+			margin-bottom: 0;
+			background-color: #006B8E;
+		}
+
+		.left {
+			position: relative;
+			display: inline-block;
+			width: 30%;
+			height: 100%;
+			text-align: center;
+			img {
+				@include centered;
+				display: block;
+				width: 60%;
+			}
+		}
+		.right {
+			position: relative;
+			display: inline-block;
+			width: 50%;
+			height: 100%;
+			span {
+				@include vertically-centered;
+				left: 5%;
+				display: block;
+				color: #FFF;
+				font-size: 26px;
+				line-height: 32px;
+				text-align: left;
+			}
+		}
+
+	}
+
+}

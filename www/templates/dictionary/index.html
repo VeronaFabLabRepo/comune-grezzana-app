@@ -1,0 +1,58 @@
+<ion-view title="Dizionario Rifiuti">
+
+	<ion-content has-header="true" class="dictionary">
+
+		<form name="search_dictionary" novalidate class="search_dictionary">
+
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input type="text" ng-model="Dictionary.search" placeholder="Cerca nel dizionario *" required  autocapitalize="off">
+				</label>
+				
+				<button class="button icon ion-search orange" type="submit" ng-disabled="search_dictionary.$invalid" ng-click="searchDictionary()" ng-hide="Dictionary.searchDone"></button>
+
+				<button class="button icon ion-close-round orange" ng-click="clearSearch()" ng-hide="!Dictionary.searchDone"></button>
+			</div>
+
+		</form>
+
+		<h3 ng-hide="Dictionary.searchDone">Ultimi termini inseriti</h3>
+		<ion-list class="dictionary_list" ng-hide="Dictionary.searchDone">
+			<ion-item ng-repeat="item in dictionaryList">
+				<div class="title">
+					{{item.title}}
+				</div>
+				<div class="garbage">
+					<img ng-src="img/{{item.item_id | lowercase}}_icon.png">
+					{{item.item_description}}
+				</div>
+			</ion-item>
+		</ion-list>
+
+		<h3 ng-hide="!Dictionary.searchDone">
+			Risultati della ricerca:<br>
+			<strong>{{ Dictionary.search }}</strong>
+		</h3>
+		<ion-list class="dictionary_list" ng-hide="!Dictionary.searchDone">
+			<ion-item ng-repeat="item in searchList">
+				<div class="content">
+					<div class="title">
+					{{item.title}}
+				</div>
+				<div class="garbage">
+					<img ng-src="img/{{item.item_id | lowercase}}_icon.png">
+					{{item.item_description}}
+				</div>
+				</div>
+			</ion-item>
+		</ion-list>
+
+		<ion-infinite-scroll 
+			on-infinite="loadMoreDictionary()" 
+			icon="ion-load-d" 
+			ng-if="moreDictionaryCanBeLoaded()">
+		</ion-infinite-scroll>
+
+	</ion-content>
+
+</ion-view>

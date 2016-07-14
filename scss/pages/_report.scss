@@ -1,0 +1,145 @@
+.photo_container,
+.btn_container {
+	display: block;
+	width: 250px;
+	height: 100px;
+	margin: 30px auto;
+	color: #CCC;
+	font-size: 16px;
+	line-height: 100px;
+	text-align: center;
+
+	span {
+		position: relative;
+		display: block;
+		float: left;
+		height: 100px;
+	}
+	.plus {
+		width: 100px;
+		margin-right: 20px;
+		@include border-radius(100%);
+		background: #CCC;
+		overflow: hidden;
+
+		&:before,
+		&:after {
+			content: '';
+			@include centered;
+			z-index: 1;
+		}
+		&:before {
+			width: 20px;
+			height: 3px;
+			background: #FFF;
+		}
+		&:after {
+			width: 3px;
+			height: 20px;
+			background: #FFF;
+		}
+		img {
+			@include centered;
+			z-index: 2;
+		}
+
+	}
+
+}
+.btn_container {
+	margin-top: 30px;
+	margin-bottom: 0;
+	height: 70px;
+	line-height: 70px;
+	span {
+		height: 70px;
+		line-height: 70px;
+	}
+	.icon-left {
+		width: 40px;
+		margin: 0 30px;
+		font-size: 70px;
+	}
+}
+.button.position,
+.button.position:active,
+.button.position.active,
+.button.position.activated {
+	display: block;
+	width: 200px;
+	height: 40px;
+	margin: 30px auto 0;
+	padding: 0;
+	border: none;
+	box-shadow: none;
+	background: none;
+	color: #CCC;
+	font-size: 16px;
+	line-height: 40px;
+	text-align: left;
+
+	&:hover {
+		color: #373737;
+	}
+	&:before {
+		width: 40px;
+		margin-right: 20px;
+		padding: 0;
+		font-size: 60px;
+		line-height: 40px;
+		text-align: center;
+	}
+	&.active {
+		color: #00467F;
+	}
+}
+
+.report {
+	background-color: #006A90;
+	.scroll {
+		height: 100%;
+	}
+	form {
+		padding-top: 30px;
+	}
+	h2 {
+		color: #00467F;
+		text-align: center;
+	}
+
+	.list {
+		margin: 0;
+		padding: 20px;
+		label {
+			border: none;
+			margin-top: 15px;
+			padding: 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			input::-webkit-input-placeholder,
+			textarea::-webkit-input-placeholder {
+				color: #004680;
+				text-transform: uppercase;
+			}
+			input,
+			textarea {
+				padding: 0 0 0 15px;
+				height: 60px;
+				color: #004680;
+				font-size: 14px;
+				resize: none;
+				line-height: 60px;
+			}
+			textarea {
+				height: 160px;
+				padding: 15px;
+				line-height: 16px;
+			}
+		}
+	}
+
+}
+

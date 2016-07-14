@@ -1,0 +1,182 @@
+calendar {
+	display:block;
+	width: 100%;
+	margin-bottom: 30px;
+	background: #FFF;
+
+	> .header {
+		position: relative;
+		width: 100%;
+		background: #004681;
+		height: 60px;
+		color: #FFF;
+
+		> * {
+			display: block;
+			height: 60px;
+			line-height: 60px;
+			vertical-align: middle;
+		}
+        
+        > .icon {
+            position: absolute;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            text-align: center;
+            z-index: 10;
+			&.left {
+				left: 0;
+			}
+			&.right {
+				right: 0;
+			}
+        }
+        
+		> div {
+			position: absolute;
+			width: 100%;
+			background-color: #00597F;
+			font-size: 22px;
+			text-align: center;
+			text-transform: capitalize;
+		}
+    }
+
+	> .week {
+		height: 37px;
+		width: 100%;
+		background-color: #F9F9F9;
+		border-top: 1px #FFF solid;
+        
+		&:first-child {
+			border-top: none;
+		}
+
+        > div.day {
+        	position: relative;
+			display: inline-block;
+			float: left;
+			width: percentage(100/7) / 100;
+			height: 36px;
+			border-left: 1px #FFF solid;
+            color: #00597F;
+            font-size: 16px;
+			line-height: 36px;
+			vertical-align: middle;
+			text-align: center;
+
+            &:first-child {
+                border-left: none;
+            }
+			.number {
+				position: relative;
+				z-index: 10;
+			}
+			&.today {
+				background: #E3F2FF;
+			}
+			&.different-month {
+				color: #C0C0C0;
+			}
+			&.selected {
+				background: #2875C7;
+				color: #FFF;
+			}
+			&.garbage {
+				position: relative;
+				color: #FFF;
+				z-index: 5;
+				a {
+					color: #FFF;
+				}
+				.number {
+					font-weight: bold;
+				}
+				.triangle {
+					position: absolute;
+					top: 0; left: 0;
+					width: 100%;
+					height: 100%;
+					&:before,
+					&:after {
+						content: '';
+						width: 100%;
+						height: 100%;
+					}
+					&:before {
+						position: absolute;
+						top: 0; left: 0;
+						-webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+						clip-path: polygon(0 0, 0% 100%, 100% 0);
+					}
+					&:after {
+						position: absolute;
+						bottom: 0; right: 0;
+						-webkit-clip-path: polygon(100% 100%, 0% 100%, 100% 0);
+						clip-path: polygon(100% 100%, 0% 100%, 100% 0);
+					}
+				}
+			}
+			&.humid {
+				background: $humid;
+			}
+			&.dry {
+				background: $dry;
+			}
+			&.paper {
+				background: $paper;
+			}
+			&.plastic {
+				background: $plastic;
+			}
+			&.green_a_zone {
+				background: $greenA;
+			}
+			&.green_b_zone {
+				background: $greenB;
+			}
+			span.ecomobile {
+				display: none;
+				position: absolute;
+				top: 0; left: 0;
+				z-index: 5;
+				width: 100%;
+				height: 100%;
+				background: $ecomobile;
+				-webkit-clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+				clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+			}
+			&.humid.green_a_zone {
+				background: none;
+				.triangle:before {
+					background: $humid;
+				}
+				.triangle:after {
+					background: $greenA;
+				}
+			}
+			&.plastic.green_b_zone {
+				background: none;
+				.triangle:before {
+					background: $plastic;
+				}
+				.triangle:after {
+					background: $greenB;
+				}
+			}
+			&.ecomobile {
+				span.ecomobile {
+					display: block;
+				}
+			}
+
+        }
+        
+        &.names > div {
+            color: #00597F;
+            font-weight: bold;
+        }
+    }
+}

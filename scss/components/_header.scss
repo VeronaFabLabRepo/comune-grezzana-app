@@ -1,0 +1,25 @@
+.bar.bar-positive {
+	background-color: #FFF;
+}
+.bar.bar-positive.bar-header {
+	height: 60px;
+	border-bottom: 1px #00477F solid;
+	line-height: 60px;
+	.title {
+		height: 100%;
+		line-height: 60px;
+		color: #00477F;
+		font-family: 'open_sanssemibold';
+		font-size: 16px;
+	}
+}
+.bar-positive .button.button-clear {
+	color: #00477F;
+}
+.bar.bar-header .button {
+	height: 50px;
+	min-height: 50px;
+}
+.bar.bar-header .button.ion-navicon-round {
+	margin-right: 5px;
+}

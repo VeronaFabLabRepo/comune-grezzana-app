@@ -1,0 +1,82 @@
+.dictionary {
+	background-color: #005783;
+	.scroll {
+		height: 100%;
+	}
+	form {
+		padding: 20px;
+	}
+
+	.search_dictionary {
+		.item.item-input-inset {
+			padding: 0;
+			background-color: transparent;
+			border: none;
+			border-radius: 0;
+
+			.item-input-wrapper {
+				width: 80%;
+				height: 50px;
+				padding: 0;
+				border-radius: 0;
+				background-color: #FFF;
+				
+				line-height: 50px;
+				input {
+					width: 100%;
+					height: 100%;
+					padding: 0 0 0 15px;
+					color: #004680;
+				}
+			}
+			.button {
+				margin: 0;
+				border: none;
+				height: 50px;
+				border-radius: 0;
+				background-color: #FF5C26;
+				color: #FFF;
+				&:disabled {
+					background-color: #B24019;
+				}
+			}
+		}
+	}
+	h3 {
+		color: #FFF;
+		font-size: 18px;
+		text-align: center;
+	}
+	.dictionary_list {
+		.item {
+			padding: 20px;
+			border-bottom: 1px #FFF solid;
+			background-color: #005685;
+			color: #FFF;
+			text-align: center;
+
+			&:first-child {
+				border-top: 1px #FFF solid;
+			}
+			&:nth-child(2n) {
+				background-color: #1A6791;
+			}
+			.title {
+				display: block;
+				margin-bottom: 15px;
+				font-size: 18px;
+				font-weight: bold;
+				text-align: center;
+				white-space: normal;
+			}
+			.garbage {
+				height: 35px;
+				line-height: 35px;
+				img {
+					margin-right: 10px;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}

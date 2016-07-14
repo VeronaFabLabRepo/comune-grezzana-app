@@ -1,0 +1,44 @@
+.popup-container {
+	.popup {
+		width: 300px;
+	}
+
+	&.single_day {
+		.popup {
+			.popup-head {
+				background-color: #00597F;
+				.popup-title {
+					color: #FFF;
+					font-family: 'open_sanssemibold';
+					font-size: 22px;
+					text-transform: capitalize;
+				}
+			}
+			.popup-body {
+				padding: 20px 0;
+				color: #00597F;
+				text-align: center;
+				p {
+					width: 80%;
+					margin: 0 auto;
+					font-size: 16px;
+				}
+				ul li {
+					font-family: 'open_sanssemibold';
+					font-size: 22px;
+					line-height: 28px;
+				}
+			}
+			.popup-buttons {
+				min-height: 60px;
+				padding: 0;
+				button {
+					border: none;
+					border-radius: 0;
+					background-color: #006B8D;
+					line-height: 45px;
+				}
+			}
+		}
+	}
+}
